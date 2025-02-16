@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Facts</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Facts About Mars</h1>
+        <p id="fact">Click the button to generate a fact about Mars.</p>
+        <button id="generateBtn">Generate</button>
+    </div>
+
+    <script>
+        const facts = [
+            "Mars is the fourth planet from the Sun.",
+            "Mars is named after the Roman god of war.",
+            "Mars has two moons: Phobos and Deimos.",
+            "Mars is home to the tallest volcano in the solar system, Olympus Mons.",
+            "Mars has the largest dust storms in the solar system.",
+            "Mars has a very thin atmosphere composed mostly of carbon dioxide.",
+            "Mars has seasons like Earth, but they last twice as long.",
+            "Mars is about half the size of Earth.",
+            "Mars has polar ice caps made of water and dry ice.",
+            "Mars' surface is covered in iron oxide, giving it a reddish appearance."
+        ];
+
+        let currentFactIndex = 0;
+
+        document.getElementById('generateBtn').addEventListener('click', () => {
+            document.getElementById('fact').textContent = facts[currentFactIndex];
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+        });
+    </script>
+</body>
+</html>
